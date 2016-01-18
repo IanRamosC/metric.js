@@ -37,6 +37,10 @@
 	var UNITS = {
 
 		distance: {
+			'ly': {
+				name: 'light-year',
+				base: 9.460731e+15
+			},
 			'km': {
 				name: 'kilometer',
 				base: 1000,
@@ -77,6 +81,10 @@
 
 	var converter = {};
 	converter.meters = {
+		toLightyears: function() {
+			var baseName = 'ly';
+			return conversion(baseName);
+		},
 		toKilometers: function() {
 			var baseName = 'km';
 			return conversion(baseName);
@@ -108,12 +116,12 @@
 	}
 
 	var helpers = {
-		Meters: function(num) {
+		Lightyears: function(num) {
 			var _this  = this;
 
 			if (isValidNum(num)) {
 				_this.setValue({
-					name: 'm',
+					name: 'ly',
 					value: num,
 					type: 'distance'
 				});
@@ -134,6 +142,19 @@
 
 			return converter.meters;
 		},
+		Meters: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'm',
+					value: num,
+					type: 'distance'
+				});
+			}
+
+			return converter.meters;
+		}
 	};
 
 	var MetricConstructor = function() {
