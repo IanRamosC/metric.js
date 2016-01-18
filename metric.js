@@ -41,9 +41,25 @@
 				name: 'kilometer',
 				base: 1000,
 			},
+			'hm': {
+				name: 'hectometer',
+				base: 100,
+			},
+			'dam': {
+				name: 'decameter',
+				base: 10,
+			},
 			'm': {
 				name: 'meter',
 				base: 1
+			},
+			'dm': {
+				name: 'decimeter',
+				base: 0.1
+			},
+			'cm': {
+				name: 'centimeter',
+				base: 0.01
 			},
 			'mm': {
 				name: 'milimeter',
@@ -53,26 +69,70 @@
 
 	};
 
+	var conversion = function(toName){
+		var baseTo = UNITS[Metric.value.type][toName].base;
+		var baseFrom = UNITS[Metric.value.type][Metric.value.name].base;
+		return (Metric.value.value * baseFrom) / baseTo;
+	};
+
+	var converter = {};
+	converter.meters = {
+		toKilometers: function() {
+			var baseName = 'km';
+			return conversion(baseName);
+		},
+		toHectometers: function() {
+			var baseName = 'hm';
+			return conversion(baseName);
+		},
+		toDecameters: function() {
+			var baseName = 'dam';
+			return conversion(baseName);
+		},
+		toMeters: function() {
+			var baseName = 'm';
+			return conversion(baseName);
+		},
+		toDecimeters: function() {
+			var baseName = 'dm';
+			return conversion(baseName);
+		},
+		toCentimeters: function() {
+			var baseName = 'cm';
+			return conversion(baseName);
+		},
+		toMilimimeters: function() {
+			var baseName = 'mm';
+			return conversion(baseName);
+		}
+	}
+
 	var helpers = {
 		Meters: function(num) {
-			var _value = num
-				,	_name  = 'meters'
-				,	_type  = 'distance'
-				,	_this  = this;
+			var _this  = this;
 
-			if (isValidNum(_value)) {
+			if (isValidNum(num)) {
 				_this.setValue({
-					name: _name,
-					value: _value,
-					type: _type
+					name: 'm',
+					value: num,
+					type: 'distance'
 				});
 			}
 
-			return {
-				foo: function(test) {
-					console.log(test + " | " + _this.value.value);
-				}
+			return converter.meters;
+		},
+		Kilometers: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'km',
+					value: num,
+					type: 'distance'
+				});
 			}
+
+			return converter.meters;
 		},
 	};
 
