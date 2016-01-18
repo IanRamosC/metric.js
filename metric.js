@@ -70,17 +70,36 @@
 				base: 0.001
 			}
 		},
+		time: {
+			'hr': {
+				name: 'hour',
+				base: 3600
+			},
+			'min': {
+				name: 'minute',
+				base: 60,
+			},
+			's': {
+				name: 'second',
+				base: 1,
+			},
+			'ms': {
+				name: 'miliseconds',
+				base: 0.001,
+			}
+		},
 
 	};
 
 	var conversion = function(toName){
-		var baseTo = UNITS[Metric.value.type][toName].base;
-		var baseFrom = UNITS[Metric.value.type][Metric.value.name].base;
-		return (Metric.value.value * baseFrom) / baseTo;
+		var baseTo = UNITS[Metric.value.type][toName];
+		var baseFrom = UNITS[Metric.value.type][Metric.value.name];
+		
+		return (Metric.value.value * baseFrom.base) / baseTo.base;
 	};
 
 	var converter = {};
-	converter.meters = {
+	converter.distance = {
 		toLightyears: function() {
 			var baseName = 'ly';
 			return conversion(baseName);
@@ -115,7 +134,15 @@
 		}
 	}
 
+	converter.time = {
+		toSeconds: function() {
+			var baseName = 's';
+			return conversion(baseName)
+		}
+	};
+
 	var helpers = {
+		//Distance
 		Lightyears: function(num) {
 			var _this  = this;
 
@@ -127,7 +154,7 @@
 				});
 			}
 
-			return converter.meters;
+			return converter.distance;
 		},
 		Kilometers: function(num) {
 			var _this  = this;
@@ -140,7 +167,7 @@
 				});
 			}
 
-			return converter.meters;
+			return converter.distance;
 		},
 		Meters: function(num) {
 			var _this  = this;
@@ -153,8 +180,24 @@
 				});
 			}
 
-			return converter.meters;
+			return converter.distance;
+		},
+
+		//Time
+		Hours: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'hr',
+					value: num,
+					type: 'time'
+				});
+			}
+
+			return converter.time;
 		}
+
 	};
 
 	var MetricConstructor = function() {
