@@ -126,6 +126,7 @@
 	};
 
 	var converter = {};
+
 	converter.distance = {
 		toLightyears: basicConverterCreator('ly'),
 		toKilometers: basicConverterCreator('km'),
@@ -196,19 +197,6 @@
 			if (isValidNum(num)) {
 				_this.setValue({
 					name: 'dam',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Kilometers: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'km',
 					value: num,
 					type: 'distance'
 				});
