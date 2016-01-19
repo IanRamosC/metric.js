@@ -112,86 +112,41 @@
 
 	};
 
-	var baiscConversion = function(toName){
+	var basicConversion = function(toName){
 		var baseTo = UNITS[Metric.value.type][toName];
 		var baseFrom = UNITS[Metric.value.type][Metric.value.name];
 
 		return (Metric.value.value * baseFrom.base) / baseTo.base;
 	};
 
+	var basicConverterCreator = function(name) {
+		return function() {
+			return basicConversion(name);
+		};
+	};
+
 	var converter = {};
 	converter.distance = {
-		toLightyears: function() {
-			var baseName = 'ly';
-			return baiscConversion(baseName);
-		},
-		toKilometers: function() {
-			var baseName = 'km';
-			return baiscConversion(baseName);
-		},
-		toHectometers: function() {
-			var baseName = 'hm';
-			return baiscConversion(baseName);
-		},
-		toDecameters: function() {
-			var baseName = 'dam';
-			return baiscConversion(baseName);
-		},
-		toMeters: function() {
-			var baseName = 'm';
-			return baiscConversion(baseName);
-		},
-		toDecimeters: function() {
-			var baseName = 'dm';
-			return baiscConversion(baseName);
-		},
-		toCentimeters: function() {
-			var baseName = 'cm';
-			return baiscConversion(baseName);
-		},
-		toMilimimeters: function() {
-			var baseName = 'mm';
-			return baiscConversion(baseName);
-		}
+		toLightyears: basicConverterCreator('ly'),
+		toKilometers: basicConverterCreator('km'),
+		toHectometers: basicConverterCreator('hm'),
+		toDecameters: basicConverterCreator('dam'),
+		toMeters: basicConverterCreator('m'),
+		toDecimeters: basicConverterCreator('dm'),
+		toCentimeters: basicConverterCreator('cm'),
+		toMilimimeters: basicConverterCreator('mm'),
 	};
 
 	converter.time = {
-		toYears: function() {
-			var baseName = 'y';
-			return baiscConversion(baseName);
-		},
-		toWeeks: function() {
-			var baseName = 'w';
-			return baiscConversion(baseName);
-		},
-		toDays: function() {
-			var baseName = 'd';
-			return baiscConversion(baseName);
-		},
-		toHours: function() {
-			var baseName = 'hr';
-			return baiscConversion(baseName);
-		},
-		toMinutes: function() {
-			var baseName = 'min';
-			return baiscConversion(baseName);
-		},
-		toSeconds: function() {
-			var baseName = 's';
-			return baiscConversion(baseName);
-		},
-		toDeciseconds: function() {
-			var baseName = 'ds';
-			return baiscConversion(baseName);
-		},
-		toCentiseconds: function() {
-			var baseName = 'cs';
-			return baiscConversion(baseName);
-		},
-		toMiliseconds: function() {
-			var baseName = 'ms';
-			return baiscConversion(baseName);
-		}
+		toYears: basicConverterCreator('y'),
+		toWeeks: basicConverterCreator('w'),
+		toDays: basicConverterCreator('d'),
+		toHours: basicConverterCreator('hr'),
+		toMinutes: basicConverterCreator('min'),
+		toSeconds: basicConverterCreator('s'),
+		toDeciseconds: basicConverterCreator('ds'),
+		toCentiseconds: basicConverterCreator('cs'),
+		toMiliseconds: basicConverterCreator('ms'),
 	};
 
 	var helpers = {
