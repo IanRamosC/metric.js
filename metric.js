@@ -23,7 +23,7 @@
 
 	var isValidNum = function(value) {
 		// First test if `value` isn't null
-		if ( value != null ) {
+		if ( value !== null ) {
 			if ( !isNaN(value) ) {
 				return value;
 			} else {
@@ -70,7 +70,20 @@
 				base: 0.001
 			}
 		},
+
 		time: {
+			'y': {
+				name: 'year',
+				base: 31536000
+			},
+			'w': {
+				name: 'week',
+				base: 604800
+			},
+			'd': {
+				name: 'day',
+				base: 86400
+			},
 			'hr': {
 				name: 'hour',
 				base: 3600
@@ -83,6 +96,14 @@
 				name: 'second',
 				base: 1,
 			},
+			'ds': {
+				name: 'second',
+				base: 0.1,
+			},
+			'cs': {
+				name: 'second',
+				base: 0.01,
+			},
 			'ms': {
 				name: 'miliseconds',
 				base: 0.001,
@@ -91,10 +112,10 @@
 
 	};
 
-	var conversion = function(toName){
+	var baiscConversion = function(toName){
 		var baseTo = UNITS[Metric.value.type][toName];
 		var baseFrom = UNITS[Metric.value.type][Metric.value.name];
-		
+
 		return (Metric.value.value * baseFrom.base) / baseTo.base;
 	};
 
@@ -102,42 +123,74 @@
 	converter.distance = {
 		toLightyears: function() {
 			var baseName = 'ly';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		},
 		toKilometers: function() {
 			var baseName = 'km';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		},
 		toHectometers: function() {
 			var baseName = 'hm';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		},
 		toDecameters: function() {
 			var baseName = 'dam';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		},
 		toMeters: function() {
 			var baseName = 'm';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		},
 		toDecimeters: function() {
 			var baseName = 'dm';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		},
 		toCentimeters: function() {
 			var baseName = 'cm';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		},
 		toMilimimeters: function() {
 			var baseName = 'mm';
-			return conversion(baseName);
+			return baiscConversion(baseName);
 		}
-	}
+	};
 
 	converter.time = {
+		toYears: function() {
+			var baseName = 'y';
+			return baiscConversion(baseName);
+		},
+		toWeeks: function() {
+			var baseName = 'w';
+			return baiscConversion(baseName);
+		},
+		toDays: function() {
+			var baseName = 'd';
+			return baiscConversion(baseName);
+		},
+		toHours: function() {
+			var baseName = 'hr';
+			return baiscConversion(baseName);
+		},
+		toMinutes: function() {
+			var baseName = 'min';
+			return baiscConversion(baseName);
+		},
 		toSeconds: function() {
 			var baseName = 's';
-			return conversion(baseName)
+			return baiscConversion(baseName);
+		},
+		toDeciseconds: function() {
+			var baseName = 'ds';
+			return baiscConversion(baseName);
+		},
+		toCentiseconds: function() {
+			var baseName = 'cs';
+			return baiscConversion(baseName);
+		},
+		toMiliseconds: function() {
+			var baseName = 'ms';
+			return baiscConversion(baseName);
 		}
 	};
 
@@ -149,6 +202,45 @@
 			if (isValidNum(num)) {
 				_this.setValue({
 					name: 'ly',
+					value: num,
+					type: 'distance'
+				});
+			}
+
+			return converter.distance;
+		},
+		Kilometers: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'km',
+					value: num,
+					type: 'distance'
+				});
+			}
+
+			return converter.distance;
+		},
+		Hectometers: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'hm',
+					value: num,
+					type: 'distance'
+				});
+			}
+
+			return converter.distance;
+		},
+		Decameters: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'dam',
 					value: num,
 					type: 'distance'
 				});
@@ -182,6 +274,45 @@
 
 			return converter.distance;
 		},
+		Decimeters: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'dm',
+					value: num,
+					type: 'distance'
+				});
+			}
+
+			return converter.distance;
+		},
+		Centimeters: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'cm',
+					value: num,
+					type: 'distance'
+				});
+			}
+
+			return converter.distance;
+		},
+		Milimeters: function(num) {
+			var _this  = this;
+
+			if (isValidNum(num)) {
+				_this.setValue({
+					name: 'mm',
+					value: num,
+					type: 'distance'
+				});
+			}
+
+			return converter.distance;
+		},
 
 		//Time
 		Hours: function(num) {
@@ -201,7 +332,7 @@
 	};
 
 	var MetricConstructor = function() {
-		this.value;
+		this.value = '';
 
 		this.setValue = function(obj) {
 			if ( typeof obj === 'object' && !!obj ) {
@@ -219,5 +350,6 @@
 	var Metric = new MetricConstructor();
 
 	window.Metric = Metric;
+	window.Metric.version = VERSION;
 
 })();
