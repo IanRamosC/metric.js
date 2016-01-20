@@ -68,6 +68,24 @@
 			'mm': {
 				name: 'milimeter',
 				base: 0.001
+			},
+
+			//SI
+			'mi': {
+				name: 'mile',
+				base: 1609.344
+			},
+			'in': {
+				name: 'inch',
+				base: 0.0254
+			},
+			'ft': {
+				name: 'inch',
+				base: 0.3048
+			},
+			'yd': {
+				name: 'yard',
+				base: 0.9144
 			}
 		},
 
@@ -136,6 +154,12 @@
 		toDecimeters: basicConverterCreator('dm'),
 		toCentimeters: basicConverterCreator('cm'),
 		toMilimimeters: basicConverterCreator('mm'),
+
+		//SI
+		toMiles: basicConverterCreator('mi'),
+		toInches: basicConverterCreator('in'),
+		toFeets: basicConverterCreator('ft'),
+		toYards: basicConverterCreator('td'),
 	};
 
 	converter.time = {
