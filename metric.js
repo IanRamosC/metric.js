@@ -174,112 +174,32 @@
 		toMiliseconds: basicConverterCreator('ms'),
 	};
 
+	var helperCreator = function(name, type) {
+		return function(value) {
+			var _this  = this;
+
+			if (isValidNum(value)) {
+				_this.setValue({
+					name: name,
+					value: value,
+					type: type
+				});
+			}
+
+			return converter.distance;
+		}
+	};
+
 	var helpers = {
 		//Distance
-		Lightyears: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'ly',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Kilometers: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'km',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Hectometers: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'hm',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Decameters: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'dam',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Meters: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'm',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Decimeters: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'dm',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Centimeters: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'cm',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
-		Milimeters: function(num) {
-			var _this  = this;
-
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'mm',
-					value: num,
-					type: 'distance'
-				});
-			}
-
-			return converter.distance;
-		},
+		Lightyears: helperCreator('ly', 'distance'),
+		Kilometers: helperCreator('km', 'distance'),
+		Hectometers: helperCreator('hm', 'distance'),
+		Decameters: helperCreator('dam', 'distance'),
+		Meters: helperCreator('m', 'distance'),
+		Decimeters: helperCreator('dm', 'distance'),
+		Centimeters: helperCreator('cm', 'distance'),
+		Milimeters: helperCreator('mm', 'distance'),
 
 		//Time
 		Hours: function(num) {
