@@ -186,7 +186,7 @@
 				});
 			}
 
-			return converter.distance;
+			return converter[type];
 		}
 	};
 
