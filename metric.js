@@ -159,7 +159,7 @@
 		toMiles: basicConverterCreator('mi'),
 		toInches: basicConverterCreator('in'),
 		toFeets: basicConverterCreator('ft'),
-		toYards: basicConverterCreator('td'),
+		toYards: basicConverterCreator('yd'),
 	};
 
 	converter.time = {
