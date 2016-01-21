@@ -200,23 +200,26 @@
 		Decimeters: helperCreator('dm', 'distance'),
 		Centimeters: helperCreator('cm', 'distance'),
 		Milimeters: helperCreator('mm', 'distance'),
+		//SI
+		Miles: helperCreator('mi', 'distance'),
+		Inches: helperCreator('in', 'distance'),
+		Feets: helperCreator('ft', 'distance'),
+		Yards: helperCreator('yd', 'distance'),
+
 
 		//Time
-		Hours: function(num) {
-			var _this  = this;
+		Years: helperCreator('y', 'time'),
+		Weeks: helperCreator('w', 'time'),
+		Days: helperCreator('d', 'time'),
+		Hours: helperCreator('hr', 'time'),
+		Minutes: helperCreator('min', 'time'),
+		Seconds: helperCreator('s', 'time'),
+		Deciseconds: helperCreator('ds', 'time'),
+		Centiseconds: helperCreator('cs', 'time'),
+		Miliseconds: helperCreator('ms', 'time'),
 
-			if (isValidNum(num)) {
-				_this.setValue({
-					name: 'hr',
-					value: num,
-					type: 'time'
-				});
-			}
 
-			return converter.time;
-		}
-
-	};
+	}
 
 	var MetricConstructor = function() {
 		this.value = '';
