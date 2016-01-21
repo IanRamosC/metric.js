@@ -80,7 +80,7 @@
 				base: 0.0254
 			},
 			'ft': {
-				name: 'inch',
+				name: 'feet',
 				base: 0.3048
 			},
 			'yd': {
@@ -115,11 +115,11 @@
 				base: 1,
 			},
 			'ds': {
-				name: 'second',
+				name: 'decisecond',
 				base: 0.1,
 			},
 			'cs': {
-				name: 'second',
+				name: 'centisecond',
 				base: 0.01,
 			},
 			'ms': {
