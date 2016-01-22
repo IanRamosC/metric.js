@@ -1,0 +1,19 @@
+{
+  "name": "metric.js",
+  "version": "0.0.1",
+  "description": "A unit of measurement converter for javascript",
+  "main": "metric.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ianramosc/metric.js.git"
+  },
+  "author": "Ian Ramos",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/ianramosc/metric.js#readme",
+  "devDependencies": {
+    "karma": "^0.13.19"
+  }
+}
