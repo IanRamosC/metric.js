@@ -1,26 +1,45 @@
-/*
- * @author https://github.com/ianramosc
- *
- *
- *
- *
- *
-*/
-
+/**
+ * @license
+ * priest 0.0.1 <https://ianramosc.github.io/priest>
+ * Copyright 2016 Ian Ramos <https://github.com/ianramosc>
+ * Available under MIT license <https://github.com/ianramosc/priest>
+ */
 ;(function() {
 
 	'use strict';
 
+	/**
+	 * Semantic Version
+	 * @const {string}
+	 */
 	var VERSION = '0.0.1';
 
+	/**
+	 * @private
+	 * @param {string} msg
+	 * @returns {object} Error
+	 */
 	var error = function(msg) {
 		throw new Error(msg);
 	};
 
+	/**
+	 * @private
+	 * @param {string} msg
+	 */
 	var warn = function(msg) {
 		console.log('WARNING:', msg);
 	};
 
+	/**
+	 * @private
+	 * @param {*} value The value to test
+	 * @returns {number} `value` itself if it's not a number, throws an error otherwise
+	 * @example
+	 *
+	 *     isValidNum(8173); //=> 8173
+	 *     isValidNum(true); //=> Error
+	 */
 	var isValidNum = function(value) {
 		// First test if `value` isn't null
 		if ( value !== null ) {
