@@ -131,10 +131,10 @@
 	};
 
 	var basicConversion = function(toName){
-		var baseTo = UNITS[Metric.value.type][toName];
-		var baseFrom = UNITS[Metric.value.type][Metric.value.name];
+		var baseTo = UNITS[Priest.value.type][toName];
+		var baseFrom = UNITS[Priest.value.type][Priest.value.name];
 
-		return (Metric.value.value * baseFrom.base) / baseTo.base;
+		return (Priest.value.value * baseFrom.base) / baseTo.base;
 	};
 
 	var basicConverterCreator = function(name) {
@@ -221,7 +221,7 @@
 
 	}
 
-	var MetricConstructor = function() {
+	var PriestConstructor = function() {
 		this.value = '';
 
 		this.setValue = function(obj) {
@@ -235,11 +235,11 @@
 		};
 	};
 
-	MetricConstructor.prototype = helpers;
+	PriestConstructor.prototype = helpers;
 
-	var Metric = new MetricConstructor();
+	var Priest = new PriestConstructor();
 
-	window.Metric = Metric;
-	window.Metric.version = VERSION;
+	window.Priest = Priest;
+	window.Priest.version = VERSION;
 
 })();

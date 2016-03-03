@@ -1,10 +1,10 @@
 {
-  "name": "metric.js",
+  "name": "priest",
   "version": "0.0.1",
   "description": "A unit of measurement converter for javascript",
-  "main": "metric.js",
+  "main": "priest.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -14,9 +14,5 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/ianramosc/metric.js#readme",
   "devDependencies": {
-    "jasmine-core": "^2.4.1",
-    "karma": "^0.13.19",
-    "karma-firefox-launcher": "^0.1.7",
-    "karma-jasmine": "^0.3.7"
   }
 }
