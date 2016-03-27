@@ -98,6 +98,10 @@
 				name: 'mile',
 				base: 1609.344
 			},
+      'nmi': {
+        name: 'nautical mile',
+        base: 1852
+      },
 			'in': {
 				name: 'inch',
 				base: 0.0254
@@ -180,6 +184,7 @@
     toMicrometers: basicConverterCreator('um'),
 
 		toMiles: basicConverterCreator('mi'),
+    toNauticalMiles: basicConverterCreator('nmi'),
 		toInches: basicConverterCreator('in'),
 		toFeets: basicConverterCreator('ft'),
 		toYards: basicConverterCreator('yd'),
@@ -223,9 +228,10 @@
 		Decimeters: helperCreator('dm', 'distance'),
 		Centimeters: helperCreator('cm', 'distance'),
 		Milimeters: helperCreator('mm', 'distance'),
-    Micrometers: helpers('um', 'distance'),
+    Micrometers: helperCreator('um', 'distance'),
 		//SI
 		Miles: helperCreator('mi', 'distance'),
+    NauticalMiles: helperCreator('nmi', 'distance'),
 		Inches: helperCreator('in', 'distance'),
 		Feets: helperCreator('ft', 'distance'),
 		Yards: helperCreator('yd', 'distance'),
