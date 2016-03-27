@@ -88,6 +88,10 @@
 				name: 'milimeter',
 				base: 0.001
 			},
+      'um': {
+        name: 'micrometer',
+        base: 0.000001
+      },
 
 			//SI
 			'mi': {
@@ -173,8 +177,8 @@
 		toDecimeters: basicConverterCreator('dm'),
 		toCentimeters: basicConverterCreator('cm'),
 		toMilimimeters: basicConverterCreator('mm'),
+    toMicrometers: basicConverterCreator('um'),
 
-		//SI
 		toMiles: basicConverterCreator('mi'),
 		toInches: basicConverterCreator('in'),
 		toFeets: basicConverterCreator('ft'),
@@ -219,6 +223,7 @@
 		Decimeters: helperCreator('dm', 'distance'),
 		Centimeters: helperCreator('cm', 'distance'),
 		Milimeters: helperCreator('mm', 'distance'),
+    Micrometers: helpers('um', 'distance'),
 		//SI
 		Miles: helperCreator('mi', 'distance'),
 		Inches: helperCreator('in', 'distance'),
