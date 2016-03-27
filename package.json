@@ -14,5 +14,8 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/ianramosc/metric.js#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-uglifyjs": "^0.6.2"
   }
 }
