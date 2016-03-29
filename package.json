@@ -2,7 +2,7 @@
   "name": "priest",
   "version": "0.0.1",
   "description": "A unit of measurement converter for javascript",
-  "main": "priest.js",
+  "main": "dist/priest.js",
   "scripts": {
     "test": "make test"
   },
@@ -16,6 +16,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.0",
-    "gulp-uglifyjs": "^0.6.2"
+    "gulp-uglifyjs": "^0.6.2",
+    "jshint-stylish": "^2.1.0"
   }
 }
