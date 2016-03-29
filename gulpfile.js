@@ -17,4 +17,8 @@ gulp.task('minify', function() {
     .pipe(gulp.dest('./dist/priest.min.js'))
 });
 
+gulp.task('watch', function() {
+  gulp.watch(jsPath, ['jshint', 'minify']);
+});
+
 gulp.task('default', ['watch']);
