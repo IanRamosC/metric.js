@@ -46,7 +46,7 @@
 			if ( !isNaN(value) ) {
 				return value;
 			} else {
-				error("This function only accept numbers.");
+				error("This function allows only numbers.");
 			}
 		} else {
 			error("You can't convert a null value.");
@@ -215,7 +215,7 @@
 			}
 
 			return converter[type];
-		}
+		};
 	};
 
 	var helpers = {
@@ -249,7 +249,7 @@
 		Miliseconds: helperCreator('ms', 'time'),
 
 
-	}
+	};
 
 	var PriestConstructor = function() {
 		this.value = '';

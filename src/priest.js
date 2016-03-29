@@ -215,7 +215,7 @@
 			}
 
 			return converter[type];
-		}
+		};
 	};
 
 	var helpers = {
@@ -249,7 +249,7 @@
 		Miliseconds: helperCreator('ms', 'time'),
 
 
-	}
+	};
 
 	var PriestConstructor = function() {
 		this.value = '';
