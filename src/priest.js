@@ -46,7 +46,7 @@
 			if ( !isNaN(value) ) {
 				return value;
 			} else {
-				error("This function only accept numbers.");
+				error("This function allows only numbers.");
 			}
 		} else {
 			error("You can't convert a null value.");
