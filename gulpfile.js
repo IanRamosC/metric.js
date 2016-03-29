@@ -1,7 +1,7 @@
 var gulp = require('gulp')
   , jshint = require('gulp-jshint')
   , stylish = require('jshint-stylish')
-  , uglify = require('gulp-uglify')
+  , uglify = require('gulp-uglifyjs')
   , jsPath = './src/priest.js';
 
 gulp.task('jshint', function() {
@@ -21,4 +21,4 @@ gulp.task('watch', function() {
   gulp.watch(jsPath, ['jshint', 'minify']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['jshint', 'minify', 'watch']);
