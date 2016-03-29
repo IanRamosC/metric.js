@@ -12,9 +12,9 @@ gulp.task('jshint', function() {
 
 gulp.task('minify', function() {
   return gulp.src(jsPath)
-    .pipe(gulp.dest('./dist/priest.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/priest.min.js'))
+    .pipe(gulp.dest('./dist/'))
+    .pipe(uglify('priest.min.js'))
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch', function() {
