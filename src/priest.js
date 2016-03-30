@@ -152,7 +152,15 @@
 			'ms': {
 				name: 'miliseconds',
 				base: 0.001,
-			}
+			},
+      'us': {
+        name: 'microseconds',
+        base: 0.000001,
+      },
+      'ns': {
+        name: 'nanoseconds',
+        base: 1e-9,
+      }
 		},
 
 	};
@@ -200,6 +208,8 @@
 		toDeciseconds: basicConverterCreator('ds'),
 		toCentiseconds: basicConverterCreator('cs'),
 		toMiliseconds: basicConverterCreator('ms'),
+    toMicroseconds: basicConverterCreator('us'),
+    toNanoseconds: basicConverterCreator('ns'),
 	};
 
 	var helperCreator = function(name, type) {
@@ -247,6 +257,8 @@
 		Deciseconds: helperCreator('ds', 'time'),
 		Centiseconds: helperCreator('cs', 'time'),
 		Miliseconds: helperCreator('ms', 'time'),
+    Microseconds: helperCreator('us', 'time'),
+    Nanoseconds: helperCreator('ns', 'time'),
 
 
 	};
