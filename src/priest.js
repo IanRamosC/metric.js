@@ -44,7 +44,7 @@
 		// First test if `value` isn't null
 		if ( value !== null ) {
 			if ( !isNaN(value) ) {
-				return value;
+				return Number(value);
 			} else {
 				error("This function allows only numbers.");
 			}
@@ -261,10 +261,10 @@
 		return function(value) {
 			var _this  = this;
 
-			if (isValidNum(value)) {
+			if (isValidNum(value) || Number(value) === 0) {
 				_this.setValue({
 					name: name,
-					value: value,
+					value: Number(value),
 					type: type
 				});
 			}
@@ -311,11 +311,11 @@
 	};
 
 	var PriestConstructor = function() {
-		this.value = '';
+		this.value = {};
 
 		this.setValue = function(obj) {
 			if ( typeof obj === 'object' && !!obj ) {
-				if(!!obj.name && !!obj.value && !!obj.type) {
+				if(!!obj.name && (!!obj.value || obj.value === 0) && !!obj.type) {
 					this.value = obj;
 				}
 			} else {
