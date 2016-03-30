@@ -10,14 +10,22 @@
     "uglify:build": "uglifyjs ./src/priest.js --compress --mangle -o ./dist/priest.min.js",
     "uglify": "npm run uglify:build",
     "build": "npm run clean && npm run jshint && npm run uglify"
-  },
+  }
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/ianramosc/metric.js.git"
+    "url": "git+https://github.com/ianramosc/priest.git"
   },
-  "author": "Ian Ramos",
+  "keywords": ["converter", "unit of measurement"],
+  "author": {
+    "name" : "Ian Ramos",
+    "email" : "ianramosc@gmail.com",
+    "url" : "https://ianramosc.github.io/",
+  },
   "license": "MIT",
-  "homepage": "https://bitbucket.org/ianramosc/metric.js#readme",
+  "bugs": {
+    "url": "https://github.com/ianramosc/priest/issues"
+  },
+  "homepage": "https://github.com/ianramosc/priest#readme",
   "devDependencies": {
     "jshint": "^2.9.1",
     "jshint-stylish": "^2.1.0",
