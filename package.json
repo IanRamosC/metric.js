@@ -4,7 +4,11 @@
   "description": "A unit of measurement converter for javascript",
   "main": "dist/priest.min.js",
   "scripts": {
-    "test": "make test"
+    "jshint:build": "jshint --reporter=node_modules/jshint-stylish ./src/priest.js",
+    "jshint": "npm run jshint:build",
+    "uglify:build": "uglifyjs ./src/priest.js -o ./dist/priest.min.js",
+    "uglify": "npm run uglify:build",
+    "build": "npm run jshint && npm run uglify"
   },
   "repository": {
     "type": "git",
@@ -14,10 +18,8 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/ianramosc/metric.js#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-jshint": "^2.0.0",
-    "gulp-uglifyjs": "^0.6.2",
     "jshint": "^2.9.1",
-    "jshint-stylish": "^2.1.0"
+    "jshint-stylish": "^2.1.0",
+    "uglify-js": "^2.6.2"
   }
 }
