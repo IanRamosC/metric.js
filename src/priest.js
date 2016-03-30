@@ -92,6 +92,10 @@
         name: 'micrometer',
         base: 0.000001
       },
+      'nm': {
+        name: 'nanometer',
+        base: 1e-9
+      },
 
 			//SI
 			'mi': {
@@ -150,18 +154,30 @@
 				base: 0.01,
 			},
 			'ms': {
-				name: 'miliseconds',
+				name: 'milisecond',
 				base: 0.001,
 			},
       'us': {
-        name: 'microseconds',
+        name: 'microsecond',
         base: 0.000001,
       },
       'ns': {
-        name: 'nanoseconds',
+        name: 'nanosecond',
         base: 1e-9,
       }
 		},
+
+    temperature: {
+      'c': {
+        name: 'celsius'
+      },
+      'f': {
+        name: 'fahrenheit'
+      },
+      'k': {
+        name: 'kelvin'
+      }
+    },
 
 	};
 
@@ -178,6 +194,29 @@
 		};
 	};
 
+  var temperatureConversion = function(toName) {
+    if(toName === Priest.value.name) {
+      return Priest.value.value;
+    } else {
+      switch(Priest.value.name) {
+        case 'c':
+          return (toName === 'k') ? Priest.value.value + 273.15 : Priest.value.value * (9 / 5) + 32;
+        case 'k':
+          return (toName === 'f') ? (Priest.value.value - 273.15) * (9 / 5) + 32 : Priest.value.value - 273.15;
+        case 'f':
+          return (toName === 'c') ? (Priest.value.value - 32) / (9 / 5) : (Priest.value.value - 32) / (9 / 5) + 273.15;
+        default:
+          console.log(Priest.value);
+      }
+    }
+  };
+
+  var temperatureConverterCreator = function(name) {
+    return function() {
+      return temperatureConversion(name);
+    };
+  };
+
 	var converter = {};
 
 	converter.distance = {
@@ -190,7 +229,7 @@
 		toCentimeters: basicConverterCreator('cm'),
 		toMilimimeters: basicConverterCreator('mm'),
     toMicrometers: basicConverterCreator('um'),
-
+    toNanometers: basicConverterCreator('nm'),
 		toMiles: basicConverterCreator('mi'),
     toNauticalMiles: basicConverterCreator('nmi'),
 		toInches: basicConverterCreator('in'),
@@ -211,6 +250,12 @@
     toMicroseconds: basicConverterCreator('us'),
     toNanoseconds: basicConverterCreator('ns'),
 	};
+
+  converter.temperature = {
+    toKelvin: temperatureConverterCreator('k'),
+    toFahrenheit: temperatureConverterCreator('f'),
+    toCelsius: temperatureConverterCreator('c')
+  };
 
 	var helperCreator = function(name, type) {
 		return function(value) {
@@ -239,13 +284,12 @@
 		Centimeters: helperCreator('cm', 'distance'),
 		Milimeters: helperCreator('mm', 'distance'),
     Micrometers: helperCreator('um', 'distance'),
-		//SI
+    Nanometers: helperCreator('nm', 'distance'),
 		Miles: helperCreator('mi', 'distance'),
     NauticalMiles: helperCreator('nmi', 'distance'),
 		Inches: helperCreator('in', 'distance'),
 		Feets: helperCreator('ft', 'distance'),
 		Yards: helperCreator('yd', 'distance'),
-
 
 		//Time
 		Years: helperCreator('y', 'time'),
@@ -260,7 +304,10 @@
     Microseconds: helperCreator('us', 'time'),
     Nanoseconds: helperCreator('ns', 'time'),
 
-
+    //Temperature
+    Kelvin: helperCreator('k', 'temperature'),
+    Fahrenheit: helperCreator('f', 'temperature'),
+    Celsius: helperCreator('c', 'temperature'),
 	};
 
 	var PriestConstructor = function() {
