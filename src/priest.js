@@ -238,6 +238,15 @@
       }
     },
 
+    angle: {
+      'deg': {
+        name: 'degree'
+      },
+      'rad': {
+        name: 'radian'
+      }
+    }
+
 	};
 
 	var basicConversion = function(toName){
@@ -273,6 +282,25 @@
   var temperatureConverterCreator = function(name) {
     return function() {
       return temperatureConversion(name);
+    };
+  };
+
+  var angleConversion =  function(toName) {
+    if(toName === Priest.value.name) {
+      return Priest.value.value;
+    } else {
+      switch(Priest.value.name) {
+        case 'deg':
+          return Priest.value.value * (Math.PI / 180);
+        case 'rad':
+          return Priest.value.value * (180 / Math.PI);
+      }
+    }
+  };
+
+  var angleConverterCreator = function(name) {
+    return function() {
+      return angleConversion(name);
     };
   };
 
@@ -313,7 +341,7 @@
   converter.temperature = {
     toKelvin: temperatureConverterCreator('k'),
     toFahrenheit: temperatureConverterCreator('f'),
-    toCelsius: temperatureConverterCreator('c')
+    toCelsius: temperatureConverterCreator('c'),
   };
 
   converter.mass = {
@@ -330,7 +358,12 @@
     toNanograms: basicConverterCreator('ng'),
     toStones: basicConverterCreator('st'),
     toPounds: basicConverterCreator('lb'),
-    toOunces: basicConverterCreator('oz')
+    toOunces: basicConverterCreator('oz'),
+  };
+
+  converter.angle = {
+    toDegrees: angleConverterCreator('deg'),
+    toRadians: angleConverterCreator('rad'),
   };
 
 	var helperCreator = function(name, type) {
@@ -400,6 +433,10 @@
     Stones: helperCreator('st', 'mass'),
     Pounds: helperCreator('lb', 'mass'),
     Ounces: helperCreator('oz', 'mass'),
+
+    //Angle
+    Degrees: helperCreator('deg', 'angle'),
+    Radians: helperCreator('rad', 'angle'),
 	};
 
 	var PriestConstructor = function() {
