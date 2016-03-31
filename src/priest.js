@@ -179,6 +179,65 @@
       }
     },
 
+    mass: {
+      'lt': {
+        name: 'long ton',
+        base: 1016050
+      },
+      't': {
+        name: 'tonne',
+        base: 1000000
+      },
+      'kg': {
+        name: 'kilogram',
+        base: 1000
+      },
+      'hg': {
+        name: 'hectogram',
+        base: 100
+      },
+      'dag': {
+        name: 'decagram',
+        base: 10
+      },
+      'g': {
+        name: 'gram',
+        base: 1
+      },
+      'dg': {
+        name: 'decigram',
+        base: 0.1
+      },
+      'cg': {
+        name: 'centigram',
+        base: 0.01
+      },
+      'mg': {
+        name: 'miligram',
+        base: 0.001
+      },
+      'ug': {
+        name: 'microgram',
+        base: 0.000001
+      },
+      'ng': {
+        name: 'nanogram',
+        base: 1e-9
+      },
+      'st': {
+        name: 'stone',
+        base: 6350.29318
+      },
+      'lb': {
+        name: 'pound',
+        base: 453.59237
+      },
+      'oz': {
+        name: 'ounce',
+        base: 28.349523
+      }
+    },
+
 	};
 
 	var basicConversion = function(toName){
@@ -257,6 +316,23 @@
     toCelsius: temperatureConverterCreator('c')
   };
 
+  converter.mass = {
+    toLongtons: basicConverterCreator('lt'),
+    toTonnes: basicConverterCreator('t'),
+    toKilograms: basicConverterCreator('kg'),
+    toHectograms: basicConverterCreator('hg'),
+    toDecagrams: basicConverterCreator('dag'),
+    toGrams: basicConverterCreator('g'),
+    toDecigrams: basicConverterCreator('dg'),
+    toCentigrams: basicConverterCreator('cg'),
+    toMilimigrams: basicConverterCreator('mg'),
+    toMicrograms: basicConverterCreator('ug'),
+    toNanograms: basicConverterCreator('ng'),
+    toStones: basicConverterCreator('st'),
+    toPounds: basicConverterCreator('lb'),
+    toOunces: basicConverterCreator('oz')
+  };
+
 	var helperCreator = function(name, type) {
 		return function(value) {
 			var _this  = this;
@@ -308,6 +384,22 @@
     Kelvin: helperCreator('k', 'temperature'),
     Fahrenheit: helperCreator('f', 'temperature'),
     Celsius: helperCreator('c', 'temperature'),
+
+    //Mass
+    Longtons: helperCreator('lt', 'mass'),
+    Tonnes: helperCreator('t', 'mass'),
+    Kilograms: helperCreator('kg', 'mass'),
+    Hectograms: helperCreator('hg', 'mass'),
+    Decagrams: helperCreator('dag', 'mass'),
+    Grams: helperCreator('g', 'mass'),
+    Decigrams: helperCreator('dg', 'mass'),
+    Centigrams: helperCreator('cg', 'mass'),
+    Miligrams: helperCreator('mg', 'mass'),
+    Micrograms: helperCreator('ug', 'mass'),
+    Nanograms: helperCreator('ng', 'mass'),
+    Stones: helperCreator('st', 'mass'),
+    Pounds: helperCreator('lb', 'mass'),
+    Ounces: helperCreator('oz', 'mass'),
 	};
 
 	var PriestConstructor = function() {
