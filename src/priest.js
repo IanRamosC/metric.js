@@ -273,8 +273,6 @@
           return (toName === 'f') ? (Priest.value.value - 273.15) * (9 / 5) + 32 : Priest.value.value - 273.15;
         case 'f':
           return (toName === 'c') ? (Priest.value.value - 32) / (9 / 5) : (Priest.value.value - 32) / (9 / 5) + 273.15;
-        default:
-          console.log(Priest.value);
       }
     }
   };
