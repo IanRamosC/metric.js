@@ -1,19 +1,19 @@
 {
-  "name": "priest",
+  "name": "metric",
   "version": "0.0.1",
   "description": "A unit of measurement converter for javascript",
-  "main": "./priest.min.js",
+  "main": "./metric.min.js",
   "scripts": {
-    "clean": "rm ./priest.min.js",
-    "jshint:build": "jshint --reporter=node_modules/jshint-stylish ./priest.js",
+    "clean": "rm ./metric.min.js",
+    "jshint:build": "jshint --reporter=node_modules/jshint-stylish ./metric.js",
     "jshint": "npm run jshint:build",
-    "uglify:build": "uglifyjs ./priest.js --compress --mangle -o ./priest.min.js",
+    "uglify:build": "uglifyjs ./metric.js --compress --mangle -o ./metric.min.js",
     "uglify": "npm run uglify:build",
     "build": "npm run clean && npm run jshint && npm run uglify"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ianramosc/priest.git"
+    "url": "git+https://github.com/ianramosc/metric.git"
   },
   "keywords": ["converter", "unit of measurement"],
   "author": {
@@ -23,9 +23,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ianramosc/priest/issues"
+    "url": "https://github.com/ianramosc/metric/issues"
   },
-  "homepage": "https://github.com/ianramosc/priest#readme",
+  "homepage": "https://github.com/ianramosc/metric#readme",
   "devDependencies": {
     "jshint": "^2.9.1",
     "jshint-stylish": "^2.1.0",

@@ -1,8 +1,8 @@
 /**
  * @license
- * priest 0.0.1 <https://ianramosc.github.io/priest>
+ * metric 0.0.1 <https://ianramosc.github.io/metric>
  * Copyright 2016 Ian Ramos <https://github.com/ianramosc>
- * Available under MIT license <https://github.com/ianramosc/priest>
+ * Available under MIT license <https://github.com/ianramosc/metric>
  */
 ;(function() {
 
@@ -285,10 +285,10 @@
 	};
 
 	var basicConversion = function(toName){
-		var baseTo = UNITS[Priest.value.type][toName];
-		var baseFrom = UNITS[Priest.value.type][Priest.value.name];
+		var baseTo = UNITS[Metric.value.type][toName];
+		var baseFrom = UNITS[Metric.value.type][Metric.value.name];
 
-		return (Priest.value.value * baseFrom.base) / baseTo.base;
+		return (Metric.value.value * baseFrom.base) / baseTo.base;
 	};
 
 	var basicConverterCreator = function(name) {
@@ -298,16 +298,16 @@
 	};
 
   var temperatureConversion = function(toName) {
-    if(toName === Priest.value.name) {
-      return Priest.value.value;
+    if(toName === Metric.value.name) {
+      return Metric.value.value;
     } else {
-      switch(Priest.value.name) {
+      switch(Metric.value.name) {
         case 'c':
-          return (toName === 'k') ? Priest.value.value + 273.15 : Priest.value.value * (9 / 5) + 32;
+          return (toName === 'k') ? Metric.value.value + 273.15 : Metric.value.value * (9 / 5) + 32;
         case 'k':
-          return (toName === 'f') ? (Priest.value.value - 273.15) * (9 / 5) + 32 : Priest.value.value - 273.15;
+          return (toName === 'f') ? (Metric.value.value - 273.15) * (9 / 5) + 32 : Metric.value.value - 273.15;
         case 'f':
-          return (toName === 'c') ? (Priest.value.value - 32) / (9 / 5) : (Priest.value.value - 32) / (9 / 5) + 273.15;
+          return (toName === 'c') ? (Metric.value.value - 32) / (9 / 5) : (Metric.value.value - 32) / (9 / 5) + 273.15;
       }
     }
   };
@@ -319,14 +319,14 @@
   };
 
   var angleConversion =  function(toName) {
-    if(toName === Priest.value.name) {
-      return Priest.value.value;
+    if(toName === Metric.value.name) {
+      return Metric.value.value;
     } else {
-      switch(Priest.value.name) {
+      switch(Metric.value.name) {
         case 'deg':
-          return Priest.value.value * (Math.PI / 180);
+          return Metric.value.value * (Math.PI / 180);
         case 'rad':
-          return Priest.value.value * (180 / Math.PI);
+          return Metric.value.value * (180 / Math.PI);
       }
     }
   };
@@ -493,7 +493,7 @@
     radians: helperCreator('rad', 'angle'),
 	};
 
-	var PriestConstructor = function() {
+	var MetricConstructor = function() {
 		this.value = {};
 
 		this.setValue = function(obj) {
@@ -507,11 +507,11 @@
 		};
 	};
 
-	PriestConstructor.prototype = helpers;
+	MetricConstructor.prototype = helpers;
 
-	var Priest = new PriestConstructor();
+	var Metric = new MetricConstructor();
+  Metric.version = VERSION;
 
-	window.priest = Priest;
-	window.priest.version = VERSION;
+	window.metric = Metric;
 
 })();
