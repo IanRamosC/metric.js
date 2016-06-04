@@ -2,12 +2,12 @@
   "name": "priest",
   "version": "0.0.1",
   "description": "A unit of measurement converter for javascript",
-  "main": "dist/priest.min.js",
+  "main": "./priest.min.js",
   "scripts": {
-    "clean": "rm -rf dist && mkdir dist",
-    "jshint:build": "jshint --reporter=node_modules/jshint-stylish ./src/priest.js",
+    "clean": "rm ./priest.min.js",
+    "jshint:build": "jshint --reporter=node_modules/jshint-stylish ./priest.js",
     "jshint": "npm run jshint:build",
-    "uglify:build": "uglifyjs ./src/priest.js --compress --mangle -o ./dist/priest.min.js",
+    "uglify:build": "uglifyjs ./priest.js --compress --mangle -o ./priest.min.js",
     "uglify": "npm run uglify:build",
     "build": "npm run clean && npm run jshint && npm run uglify"
   },
