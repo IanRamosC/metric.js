@@ -49,7 +49,7 @@
 				error("This function allows only numbers.");
 			}
 		} else {
-			error("You can't convert a null value.");
+			error("You can't test a null value.");
 		}
 	};
 
@@ -382,59 +382,59 @@
 
 	var helpers = {
 		//Distance
-		Lightyears: helperCreator('ly', 'distance'),
-		Kilometers: helperCreator('km', 'distance'),
-		Hectometers: helperCreator('hm', 'distance'),
-		Decameters: helperCreator('dam', 'distance'),
-		Meters: helperCreator('m', 'distance'),
-		Decimeters: helperCreator('dm', 'distance'),
-		Centimeters: helperCreator('cm', 'distance'),
-		Milimeters: helperCreator('mm', 'distance'),
-    Micrometers: helperCreator('um', 'distance'),
-    Nanometers: helperCreator('nm', 'distance'),
-		Miles: helperCreator('mi', 'distance'),
-    NauticalMiles: helperCreator('nmi', 'distance'),
-		Inches: helperCreator('in', 'distance'),
-		Feets: helperCreator('ft', 'distance'),
-		Yards: helperCreator('yd', 'distance'),
+		lightyears: helperCreator('ly', 'distance'),
+		kilometers: helperCreator('km', 'distance'),
+		hectometers: helperCreator('hm', 'distance'),
+		decameters: helperCreator('dam', 'distance'),
+		meters: helperCreator('m', 'distance'),
+		decimeters: helperCreator('dm', 'distance'),
+		centimeters: helperCreator('cm', 'distance'),
+		milimeters: helperCreator('mm', 'distance'),
+    micrometers: helperCreator('um', 'distance'),
+    nanometers: helperCreator('nm', 'distance'),
+		miles: helperCreator('mi', 'distance'),
+    nauticalMiles: helperCreator('nmi', 'distance'),
+		inches: helperCreator('in', 'distance'),
+		feets: helperCreator('ft', 'distance'),
+		yards: helperCreator('yd', 'distance'),
 
 		//Time
-		Years: helperCreator('y', 'time'),
-		Weeks: helperCreator('w', 'time'),
-		Days: helperCreator('d', 'time'),
-		Hours: helperCreator('hr', 'time'),
-		Minutes: helperCreator('min', 'time'),
-		Seconds: helperCreator('s', 'time'),
-		Deciseconds: helperCreator('ds', 'time'),
-		Centiseconds: helperCreator('cs', 'time'),
-		Miliseconds: helperCreator('ms', 'time'),
-    Microseconds: helperCreator('us', 'time'),
-    Nanoseconds: helperCreator('ns', 'time'),
+		years: helperCreator('y', 'time'),
+		weeks: helperCreator('w', 'time'),
+		days: helperCreator('d', 'time'),
+		hours: helperCreator('hr', 'time'),
+		minutes: helperCreator('min', 'time'),
+		seconds: helperCreator('s', 'time'),
+		deciseconds: helperCreator('ds', 'time'),
+		centiseconds: helperCreator('cs', 'time'),
+		miliseconds: helperCreator('ms', 'time'),
+    microseconds: helperCreator('us', 'time'),
+    nanoseconds: helperCreator('ns', 'time'),
 
     //Temperature
-    Kelvin: helperCreator('k', 'temperature'),
-    Fahrenheit: helperCreator('f', 'temperature'),
-    Celsius: helperCreator('c', 'temperature'),
+    kelvin: helperCreator('k', 'temperature'),
+    fahrenheit: helperCreator('f', 'temperature'),
+    celsius: helperCreator('c', 'temperature'),
 
     //Mass
-    Longtons: helperCreator('lt', 'mass'),
-    Tonnes: helperCreator('t', 'mass'),
-    Kilograms: helperCreator('kg', 'mass'),
-    Hectograms: helperCreator('hg', 'mass'),
-    Decagrams: helperCreator('dag', 'mass'),
-    Grams: helperCreator('g', 'mass'),
-    Decigrams: helperCreator('dg', 'mass'),
-    Centigrams: helperCreator('cg', 'mass'),
-    Miligrams: helperCreator('mg', 'mass'),
-    Micrograms: helperCreator('ug', 'mass'),
-    Nanograms: helperCreator('ng', 'mass'),
-    Stones: helperCreator('st', 'mass'),
-    Pounds: helperCreator('lb', 'mass'),
-    Ounces: helperCreator('oz', 'mass'),
+    longtons: helperCreator('lt', 'mass'),
+    tonnes: helperCreator('t', 'mass'),
+    kilograms: helperCreator('kg', 'mass'),
+    hectograms: helperCreator('hg', 'mass'),
+    decagrams: helperCreator('dag', 'mass'),
+    grams: helperCreator('g', 'mass'),
+    decigrams: helperCreator('dg', 'mass'),
+    centigrams: helperCreator('cg', 'mass'),
+    miligrams: helperCreator('mg', 'mass'),
+    micrograms: helperCreator('ug', 'mass'),
+    nanograms: helperCreator('ng', 'mass'),
+    stones: helperCreator('st', 'mass'),
+    pounds: helperCreator('lb', 'mass'),
+    ounces: helperCreator('oz', 'mass'),
 
     //Angle
-    Degrees: helperCreator('deg', 'angle'),
-    Radians: helperCreator('rad', 'angle'),
+    degrees: helperCreator('deg', 'angle'),
+    radians: helperCreator('rad', 'angle'),
 	};
 
 	var PriestConstructor = function() {
@@ -455,7 +455,7 @@
 
 	var Priest = new PriestConstructor();
 
-	window.Priest = Priest;
-	window.Priest.version = VERSION;
+	window.priest = Priest;
+	window.priest.version = VERSION;
 
 })();
