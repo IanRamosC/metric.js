@@ -120,6 +120,41 @@
 			}
 		},
 
+    area: {
+      'sqkm': {
+        name: 'square kilometer',
+        base: 1000000
+      },
+      'sqm': {
+        name: 'square meter',
+        base: 1
+      },
+      'sqmi': {
+        name: 'square mile',
+        base: 2590000
+      },
+      'sqyd': {
+        name: 'square yard',
+        base: 0.83613119866071
+      },
+      'sqft': {
+        name: 'square foot',
+        base: 0.092903
+      },
+      'sqin': {
+        name: 'square inch',
+        base: 0.00064516
+      },
+      'ha': {
+        name: 'hectare',
+        base: 10000
+      },
+      'ac': {
+        name: 'acre',
+        base: 4046.86
+      }
+    },
+
 		time: {
 			'y': {
 				name: 'year',
@@ -322,6 +357,17 @@
 		toYards: basicConverterCreator('yd'),
 	};
 
+  converter.area = {
+    toSquareKilometers: basicConverterCreator('sqkm'),
+    toSquareMeters: basicConverterCreator('sqm'),
+    toSquareMiles: basicConverterCreator('sqmi'),
+    toSquareYards: basicConverterCreator('sqyd'),
+    toSquareFoots: basicConverterCreator('sqft'),
+    toSquareInches: basicConverterCreator('sqin'),
+    toHectares: basicConverterCreator('ha'),
+    toAcres: basicConverterCreator('ac')
+  };
+
 	converter.time = {
 		toYears: basicConverterCreator('y'),
 		toWeeks: basicConverterCreator('w'),
@@ -397,6 +443,16 @@
 		inches: helperCreator('in', 'distance'),
 		feets: helperCreator('ft', 'distance'),
 		yards: helperCreator('yd', 'distance'),
+
+    //Area
+    squareKilometers: helperCreator('sqkm', 'area'),
+    squareMeters: helperCreator('sqm', 'area'),
+    squareMiles: helperCreator('sqmi', 'area'),
+    squareYards: helperCreator('sqyd', 'area'),
+    squareFoots: helperCreator('sqft', 'area'),
+    squareInches: helperCreator('sqin', 'area'),
+    hectares: helperCreator('ha', 'area'),
+    acres: helperCreator('ac', 'area'),
 
 		//Time
 		years: helperCreator('y', 'time'),
