@@ -1,8 +1,8 @@
 /**
  * @license
- * metric 0.0.1 <https://ianramosc.github.io/metric>
+ * metricjs 0.0.1 <https://ianramosc.github.io/metric.js>
  * Copyright 2016 Ian Ramos <https://github.com/ianramosc>
- * Available under MIT license <https://github.com/ianramosc/metric>
+ * Available under MIT license <https://github.com/ianramosc/metric.js>
  */
 ;(function(window) {
 

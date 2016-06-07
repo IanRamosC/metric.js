@@ -1,5 +1,5 @@
 {
-  "name": "metric",
+  "name": "metricjs",
   "version": "0.0.1",
   "description": "A unit of measurement converter for javascript",
   "main": "./metric.min.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ianramosc/metric.git"
+    "url": "git+https://github.com/ianramosc/metric.js.git"
   },
   "keywords": ["converter", "unit of measurement"],
   "author": {
@@ -23,9 +23,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ianramosc/metric/issues"
+    "url": "https://github.com/ianramosc/metric.js/issues"
   },
-  "homepage": "https://github.com/ianramosc/metric#readme",
+  "homepage": "https://github.com/ianramosc/metric.js#readme",
   "devDependencies": {
     "jshint": "^2.9.1",
     "jshint-stylish": "^2.1.0",
