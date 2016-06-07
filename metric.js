@@ -270,6 +270,29 @@
       }
     },
 
+    speed: {
+      'mph': {
+        name: 'miles per hour',
+        base: 1.60934
+      },
+      'kph': {
+        name: 'kilometers per hour',
+        base: 1
+      },
+      'fts': {
+        name: 'foots per second',
+        base: 1.09728
+      },
+      'ms': {
+        name: 'meters per second',
+        base: 3.6
+      },
+      'kn': {
+        name: 'knot',
+        base: 1.852
+      }
+    },
+
     angle: {
       'deg': {
         name: 'degree'
@@ -403,6 +426,14 @@
     toOunces: basicConverterCreator('oz'),
   };
 
+  converter.speed = {
+    toMilesPerHour: basicConverterCreator('mph'),
+    toKilometersPerHour: basicConverterCreator('kph'),
+    toFootsPerSecond: basicConverterCreator('fts'),
+    toMetersPerSeconds: basicConverterCreator('ms'),
+    toKnot: basicConverterCreator('kn')
+  };
+
   converter.angle = {
     toDegrees: angleConverterCreator('deg'),
     toRadians: angleConverterCreator('rad'),
@@ -485,6 +516,13 @@
     stones: helperCreator('st', 'mass'),
     pounds: helperCreator('lb', 'mass'),
     ounces: helperCreator('oz', 'mass'),
+
+    //Speed
+    milesPerHour: helperCreator('mph', 'speed'),
+    kilometersPerHour: helperCreator('kph', 'speed'),
+    footsPerSecond: helperCreator('fts', 'speed'),
+    metersPerSecond: helperCreator('ms', 'speed'),
+    knot: helperCreator('kn', 'speed'),
 
     //Angle
     degrees: helperCreator('deg', 'angle'),
