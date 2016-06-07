@@ -49,6 +49,7 @@
     }
   };
 
+  //Units available for conversion separated by category
   var UNITS = {
 
     distance: {
@@ -333,6 +334,7 @@
     };
   };
 
+  //used to store conversion methods for each category
   var converter = {};
 
   converter.distance = {
