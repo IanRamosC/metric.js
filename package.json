@@ -1,6 +1,6 @@
 {
   "name": "metricjs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A unit of measurement converter for javascript",
   "main": "./metric.min.js",
   "scripts": {
