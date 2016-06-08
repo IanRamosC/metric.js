@@ -4,10 +4,10 @@ Metric.js
 Lightweight easy-to-use library for unit of measurement conversion.
 
 <p align="center">
-  <img alt="Metric.js" src="metric.svg" width="300px" />
+  <img alt="Metric.js" src="http://ianramosc.github.io/metric.js/images/logo.svg" width="300px" />
 </p>
 
-[![Build Status](https://travis-ci.org/ianramosc/metric.js.svg?branch=master)](https://travis-ci.org/ianramosc/metric.js)
+[![Build Status](https://travis-ci.org/IanRamosC/metric.js.svg?branch=master)](https://travis-ci.org/IanRamosC/metric.js)
 
 ### What is ~~love~~ Metric?
 
