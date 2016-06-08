@@ -16,11 +16,11 @@ body {
 	display: block;
 	width: 200px;
 	margin: auto;
-	-webkit-animation: 2s rotate linear infinite;
-		 -moz-animation: 2s rotate linear infinite;
-			-ms-animation: 2s rotate linear infinite;
-			 -o-animation: 2s rotate linear infinite;
-					animation: 2s rotate linear infinite;
+	-webkit-animation: 3s rotate linear infinite;
+		 -moz-animation: 3s rotate linear infinite;
+			-ms-animation: 3s rotate linear infinite;
+			 -o-animation: 3s rotate linear infinite;
+					animation: 3s rotate linear infinite;
 }
 
 header, main {
