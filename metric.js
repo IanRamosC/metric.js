@@ -82,7 +82,7 @@
         base: 0.01
       },
       'mm': {
-        name: 'milimeter',
+        name: 'millimeter',
         base: 0.001
       },
       'um': {
@@ -186,7 +186,7 @@
         base: 0.01,
       },
       'ms': {
-        name: 'milisecond',
+        name: 'millisecond',
         base: 0.001,
       },
       'us': {
@@ -245,7 +245,7 @@
         base: 0.01
       },
       'mg': {
-        name: 'miligram',
+        name: 'milligram',
         base: 0.001
       },
       'ug': {
@@ -368,7 +368,7 @@
     toMeters: basicConverterCreator('m'),
     toDecimeters: basicConverterCreator('dm'),
     toCentimeters: basicConverterCreator('cm'),
-    toMilimimeters: basicConverterCreator('mm'),
+    toMillimimeters: basicConverterCreator('mm'),
     toMicrometers: basicConverterCreator('um'),
     toNanometers: basicConverterCreator('nm'),
     toMiles: basicConverterCreator('mi'),
@@ -398,7 +398,7 @@
     toSeconds: basicConverterCreator('s'),
     toDeciseconds: basicConverterCreator('ds'),
     toCentiseconds: basicConverterCreator('cs'),
-    toMiliseconds: basicConverterCreator('ms'),
+    toMilliseconds: basicConverterCreator('ms'),
     toMicroseconds: basicConverterCreator('us'),
     toNanoseconds: basicConverterCreator('ns'),
   };
@@ -418,7 +418,7 @@
     toGrams: basicConverterCreator('g'),
     toDecigrams: basicConverterCreator('dg'),
     toCentigrams: basicConverterCreator('cg'),
-    toMilimigrams: basicConverterCreator('mg'),
+    toMillimigrams: basicConverterCreator('mg'),
     toMicrograms: basicConverterCreator('ug'),
     toNanograms: basicConverterCreator('ng'),
     toStones: basicConverterCreator('st'),
@@ -464,7 +464,7 @@
     meters: helperCreator('m', 'distance'),
     decimeters: helperCreator('dm', 'distance'),
     centimeters: helperCreator('cm', 'distance'),
-    milimeters: helperCreator('mm', 'distance'),
+    millimeters: helperCreator('mm', 'distance'),
     micrometers: helperCreator('um', 'distance'),
     nanometers: helperCreator('nm', 'distance'),
     miles: helperCreator('mi', 'distance'),
@@ -492,7 +492,7 @@
     seconds: helperCreator('s', 'time'),
     deciseconds: helperCreator('ds', 'time'),
     centiseconds: helperCreator('cs', 'time'),
-    miliseconds: helperCreator('ms', 'time'),
+    milliseconds: helperCreator('ms', 'time'),
     microseconds: helperCreator('us', 'time'),
     nanoseconds: helperCreator('ns', 'time'),
 
@@ -510,7 +510,7 @@
     grams: helperCreator('g', 'mass'),
     decigrams: helperCreator('dg', 'mass'),
     centigrams: helperCreator('cg', 'mass'),
-    miligrams: helperCreator('mg', 'mass'),
+    milligrams: helperCreator('mg', 'mass'),
     micrograms: helperCreator('ug', 'mass'),
     nanograms: helperCreator('ng', 'mass'),
     stones: helperCreator('st', 'mass'),
