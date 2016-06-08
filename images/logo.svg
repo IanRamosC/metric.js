@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#2C3E50;}
+	.st1{fill:#FF3E3E;}
+	.st2{fill:#CE0505;}
+	.st3{fill:#22313F;}
+</style>
+<polyline class="st0" points="2.3,12.4 9.6,5.1 31,5.1 38.2,12.4 38.2,12.4 9.6,12.4 "/>
+<polyline class="st1" points="31,31.8 38.2,24.5 38.2,16.9 31,23.6 31,26.8 31,31.8 "/>
+<polyline class="st2" points="2.3,24.6 9.6,31.8 31,31.8 38.2,24.6 38.2,24.6 9.6,24.6 "/>
+<polyline class="st3" points="31,19.6 31,5.1 31,5.1 38.2,12.4 "/>
+<polyline class="st3" points="38.2,12.4 31,19.6 32.4,13.9 38.1,12.4 "/>
+<polyline class="st2" points="9.6,17.4 9.6,31.8 9.6,31.8 2.3,24.6 "/>
+<polyline class="st1" points="2.3,24.6 9.6,17.4 9.6,24.6 2.5,24.6 "/>
+<polyline class="st3" points="2.3,20.5 9.6,13.2 9.6,5.1 2.3,12.3 2.3,15.5 2.3,20.5 "/>
+</svg>

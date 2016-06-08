@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Metric.js Documentation</title>
+	<link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+<body>
+	<header>
+		<img class="logo" src="./images/logo.svg" alt="Metric.js logo">
+	</header>
+	<main>
+		<h2 class="title">Overview</h2>
+		<p>Metric.js is an easy-to-use library that aims to facilitate the conversion between units of measurement.</p>
+
+		<h2 class="title">Installation</h2>
+		<p>
+			<pre>
+				$ npm install --save metricjs
+			</pre>
+		</p>
+
+		<h2 class="title">Usage</h2>
+		<p>
+			All methods begins with lowercase letter and each other words begins with capital letters.
+
+			The first method indicates from which unit will be converted. The second method represents to which unit will be converted - starts with `to`.
+			<pre>
+				const metric = require('metricjs');
+
+				metric.hours(60).toDays(); //2.5
+			</pre>
+		</p>
+
+		<h2 class="title">List of units and Methods</h2>
+		<p>
+			<div class="units-list">
+				<h3>Distance</h3>
+				lightyears, kilometers, hectometers, decameters, meters, decimeters, centimeters, millimeters, micrometers, nanometers, miles, nauticalMiles, inches, feets, yards
+			</div>
+
+			<div class="units-list">
+				<h3>Area</h3>
+				squareKilometers, squareMeters, squareMiles, squareYards, squareFoots, squareInches, hectares, acres
+			</div>
+
+			<div class="units-list">
+				<h3>Time</h3>
+				years, weeks, days, hours, minutes, seconds, deciseconds, centiseconds, milliseconds, microseconds, nanoseconds
+			</div>
+
+			<div class="units-list">
+				<h3>Temperature</h3>
+				kelvin, fahrenheit, celsius
+			</div>
+
+			<div class="units-list">
+				<h3>Mass</h3>
+				longtons, tonnes, kilograms, hectograms, decagrams, grams, decigrams, centigrams, milligrams, micrograms, nanograms, stones, pounds, ounces
+			</div>
+
+			<div class="units-list">
+				<h3>Speed</h3>
+				milesPerHours, kilometersPerHour, footsPerSecond, metersPerSecond, knot
+			</div>
+
+			<div class="units-list">
+				<h3>Angle</h3>
+				degrees, radians
+			</div>
+		</p>
+	</main>
+</body>
+</html>
