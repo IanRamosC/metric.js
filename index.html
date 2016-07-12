@@ -26,9 +26,12 @@
 
 			The first method indicates from which unit will be converted. The second method represents to which unit will be converted - starts with `to`.
 			<pre>
-				const metric = require('metricjs');
-
-				metric.hours(60).toDays(); //2.5
+				// If you're using node 
+				const metric = require("metricjs")
+ 
+				let birthday = new Date("1995-03-01T00:00:00Z").getTime()
+ 
+				let age = metric.milliseconds(Date.now() - birthday).toYears() // 21.38... 
 			</pre>
 		</p>
 
