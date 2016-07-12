@@ -1,6 +1,6 @@
 /**
  * @license
- * metricjs 0.0.1 <https://ianramosc.github.io/metric.js>
+ * metricjs 1.0.1 <https://ianramosc.github.io/metric.js>
  * Copyright 2016 Ian Ramos <https://github.com/ianramosc>
  * Available under MIT license <https://github.com/ianramosc/metric.js>
  */
@@ -8,7 +8,7 @@
 
   'use strict';
 
-  var VERSION = '1.0.0';
+  var VERSION = '1.0.1';
 
   /**
    * @private

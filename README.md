@@ -29,9 +29,11 @@ or
 
 ```js
 // If you're using node
-const metric = require('metricjs');
+const metric = require("metricjs")
 
-metric.hours(60).toDays(); // 2.5
+let birthday = new Date("1995-03-01T00:00:00Z").getTime()
+
+let age = metric.milliseconds(Date.now() - birthday).toYears() // 21.38...
 ```
 [You can find the full documentation here](https://ianramosc.github.io/metric.js)
 
