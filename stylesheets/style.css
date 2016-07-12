@@ -50,6 +50,9 @@ main {
 
 pre {
 	color: #333;
+    	white-space: pre-line;
+    	background: #E9E9E9;
+    	padding: 10px;
 }
 
 @keyframes rotate {
