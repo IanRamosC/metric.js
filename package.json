@@ -1,6 +1,6 @@
 {
   "name": "metricjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A unit of measurement converter for javascript",
   "main": "./metric.min.js",
   "scripts": {
@@ -15,11 +15,14 @@
     "type": "git",
     "url": "git+https://github.com/ianramosc/metric.js.git"
   },
-  "keywords": ["converter", "unit of measurement"],
+  "keywords": [
+    "converter",
+    "unit of measurement"
+  ],
   "author": {
-    "name" : "Ian Ramos",
-    "email" : "ianramosc@gmail.com",
-    "url" : "https://ianramosc.github.io/"
+    "name": "Ian Ramos",
+    "email": "ianramosc@gmail.com",
+    "url": "https://ianramosc.github.io/"
   },
   "license": "MIT",
   "bugs": {
